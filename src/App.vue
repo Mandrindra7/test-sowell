@@ -2,7 +2,7 @@
   <q-layout view="hHh lpR lFf">
     <q-header elevated class="bg-primary text-white">
       <q-toolbar>
-        <q-btn dense flat round icon="menu" @click="drawer = true" />
+        <q-btn data-testid="drawer" dense flat round icon="menu" @click="drawer = true" />
 
         <q-toolbar-title>
           <q-avatar>
@@ -26,6 +26,7 @@
         <q-list>
           <template v-for="(menuItem, index) in menuList" :key="index">
             <q-item
+              data-testid="list-item"
               clickable
               :active="menuItem.name === $route.name"
               v-ripple
