@@ -1,9 +1,10 @@
 <template>
   <q-page padding>
-    <div class="text-h4">Form</div>
+    <div data-testid="form" class="text-h4">Form</div>
     <div class="q-py-md" style="max-width: 400px">
       <q-form ref="inputForm" @submit="onSubmit" @reset="onReset" class="q-gutter-md">
         <q-input
+          data-testid="name-input"
           filled
           v-model="form.fullName"
           label="Your name *"
@@ -13,6 +14,7 @@
         />
 
         <q-input
+          data-testid="number"
           filled
           type="number"
           v-model="form.age"
@@ -25,6 +27,7 @@
         />
 
         <q-input
+          data-testid="about"
           filled
           v-model="form.about"
           label="About you"
@@ -32,7 +35,7 @@
           type="textarea"
         />
 
-        <q-toggle v-model="form.accept" label="I accept the license and terms" />
+        <q-toggle  data-testid="check" v-model="form.accept" label="I accept the license and terms" />
 
         <div>
           <q-btn label="Submit" type="submit" color="primary" />
